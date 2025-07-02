@@ -40,7 +40,7 @@ export function NavItem({
       <Accordion className="w-[160px] bg-transparent border-none shadow-none p-0">
         <AccordionSummary
           className={accordionClass}
-          expandIcon={<MdArrowDropDown color="#969494" size={20} />}
+          expandIcon={<MdArrowDropDown color="#fff" size={20} />}
           aria-controls="panel2-content"
           id="panel2-header"
         >

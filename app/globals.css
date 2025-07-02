@@ -19,6 +19,7 @@
   --color-secondary-light: #a0ffa8;
   --color-primary-alt: #098c67;
   --color-primary-neutral: #263835;
+  --color-highlight: #80d6ee;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,4 +33,10 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.no-spin::-webkit-outer-spin-button,
+.no-spin::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

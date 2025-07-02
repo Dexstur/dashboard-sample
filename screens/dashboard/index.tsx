@@ -10,7 +10,7 @@ export function DashboardScreen() {
   dashboardCharts();
   return (
     <div>
-      <h1>Dashboard</h1>
+      <h1 className="text-2xl font-bold py-2 px-4">Dashboard</h1>
       <DashboardCards />
       <DashboardCharts />
     </div>

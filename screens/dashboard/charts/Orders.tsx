@@ -11,11 +11,23 @@ export function OrdersChart() {
     title: {
       text: "Orders",
     },
+    legend: {
+      formatter: (seriesName, opts) => {
+        const index = opts.seriesIndex;
+        return `${seriesName}: ${series[index].toLocaleString()}`;
+      },
+      onItemClick: {
+        toggleDataSeries: true,
+      },
+      onItemHover: {
+        highlightDataSeries: false,
+      },
+    },
   };
   return (
     <div>
       <span className="">
-        <Chart options={options} series={series} type="pie" />
+        <Chart options={options} series={series} type="pie" height={540} />
       </span>
     </div>
   );

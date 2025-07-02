@@ -29,7 +29,7 @@ export function AppButton({
 
   return (
     <Button
-      className={`flex items-center justify-center font-semibold hover:cursor-pointer transition-all duration-300 ${sizeClass} ${colorClass} ${className}`}
+      className={`flex items-center justify-center font-semibold hover:cursor-pointer disabled:cursor-not-allowed transition-all duration-300 ${sizeClass} ${colorClass} ${className}`}
       type={type}
       onClick={onClick}
       disabled={disabled}

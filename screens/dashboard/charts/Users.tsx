@@ -16,9 +16,19 @@ export function UsersChart() {
             title: {
               text: "Users",
             },
+            legend: {
+              formatter: (seriesName, opts) => {
+                const index = opts.seriesIndex;
+                return `${seriesName}: ${series[index].toLocaleString()}`;
+              },
+              onItemClick: {
+                toggleDataSeries: true,
+              },
+            },
           }}
           series={series}
           type="donut"
+          height={540}
         />
       </span>
     </div>
