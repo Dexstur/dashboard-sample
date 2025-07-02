@@ -8,13 +8,19 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import { authReducer, dashboardReducer, globalReducer } from ".";
+import {
+  authReducer,
+  dashboardReducer,
+  globalReducer,
+  productReducer,
+} from ".";
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     dashboard: dashboardReducer,
     global: globalReducer,
+    product: productReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

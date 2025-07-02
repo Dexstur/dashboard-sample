@@ -41,7 +41,12 @@ export function AdminHeader({
         }
         className="bg-background rounded-md text-black ml-6 lg:ml-0 lg:w-[280px]"
         value={search}
-        onChange={(e) => localSearch(e.target.value)}
+        onChange={(e) => {
+          localSearch(e.target.value);
+          if (!e.target.value) {
+            dispatch(setSearch(""));
+          }
+        }}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
             dispatch(setSearch(search));
@@ -49,7 +54,7 @@ export function AdminHeader({
         }}
       />
       <div className="flex w-[80%] justify-between items-center gap-2 lg:gap-4 px-4">
-        <h1 className="font-sans text-primary-dark">WIST</h1>
+        <h2 className="font-sans text-primary-dark">WIST</h2>
         <div>
           <span
             className="text-white relative hover:text-primary-light transition-all duration-300 cursor-pointer"

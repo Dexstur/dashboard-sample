@@ -23,7 +23,7 @@ export function useDashboardActions() {
   async function dashboardCharts() {
     try {
       const response: DashboardChartResponse = await getDashboardCharts();
-      console.log(response);
+
       dispatch(
         setDashboardCharts({
           charts: {

@@ -27,7 +27,7 @@ export function OrdersChart() {
   return (
     <div>
       <span className="">
-        <Chart options={options} series={series} type="pie" />
+        <Chart options={options} series={series} type="pie" height={540} />
       </span>
     </div>
   );
