@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Chart from "react-apexcharts";
 import * as Apex from "apexcharts";
 import { useAppSelector } from "@/hooks";
+import { mockDashboardProducts } from "@/mock";
 
 export function ProductChart() {
+  const mockData = mockDashboardProducts();
   const [series] = useState([
     {
       name: "product 1",
@@ -22,9 +24,12 @@ export function ProductChart() {
   const options: Apex.ApexOptions = {
     chart: {
       id: "basic-bar",
+      zoom: {
+        allowMouseWheelZoom: false,
+      },
     },
     xaxis: {
-      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+      categories: mockData.map((item) => item.year),
     },
     title: {
       text: "Best Products",
@@ -32,7 +37,7 @@ export function ProductChart() {
   };
   return (
     <div>
-      <Chart options={options} series={series} type="line" />
+      <Chart options={options} series={series} type="line" zoom={{}} />
     </div>
   );
 }

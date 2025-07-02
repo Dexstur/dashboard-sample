@@ -11,6 +11,18 @@ export function OrdersChart() {
     title: {
       text: "Orders",
     },
+    legend: {
+      formatter: (seriesName, opts) => {
+        const index = opts.seriesIndex;
+        return `${seriesName}: ${series[index].toLocaleString()}`;
+      },
+      onItemClick: {
+        toggleDataSeries: true,
+      },
+      onItemHover: {
+        highlightDataSeries: false,
+      },
+    },
   };
   return (
     <div>
