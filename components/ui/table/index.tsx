@@ -32,10 +32,11 @@ export function AppTable<T>({
           sortIcon={TableSortIcon}
           rowClassName={() =>
             classNames({
-              "bg-[#fff8f8] hover:bg-highlight": !loading,
+              "bg-[#fff8f8] hover:bg-highlight transition-all duration-300":
+                !loading,
             })
           }
-          className="border-primary"
+          className="outline-primary"
         >
           {headings.map((heading) => (
             <Column

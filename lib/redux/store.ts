@@ -13,6 +13,7 @@ import {
   dashboardReducer,
   globalReducer,
   productReducer,
+  prototypeReducer,
 } from ".";
 
 export const store = configureStore({
@@ -21,6 +22,7 @@ export const store = configureStore({
     dashboard: dashboardReducer,
     global: globalReducer,
     product: productReducer,
+    prototype: prototypeReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
