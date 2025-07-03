@@ -25,7 +25,7 @@ export function AdminHeader({
   );
   return (
     <header className="flex fixed top-0 z-20 bg-primary-dark h-16 md:h-[100px] text-white w-full items-center p-4 justify-between font-sans border-b">
-      <div className="hidden md:block w-[200px]"></div>
+      <div className="hidden md:block w-[280px]"></div>
       <span
         className="border rounded-md p-2 block md:hidden cursor-pointer"
         onClick={toggle}
