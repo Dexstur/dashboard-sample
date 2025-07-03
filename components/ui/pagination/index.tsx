@@ -23,34 +23,36 @@ export function AppPagination({
   }
 
   return (
-    <div className="page-comp flex items-center gap-2">
-      <span
-        className="p-3 border border-primary-dark rounded-full cursor-pointer"
-        onClick={() => {
-          if (page > 1) {
-            changePage(page - 1);
-          }
-        }}
-      >
-        <GrPrevious />
-      </span>
+    <div className="page-comp flex flex-col lg:flex-row items-center gap-2">
+      <div className="flex gap-2">
+        <span
+          className="p-3 border border-primary-dark rounded-full cursor-pointer"
+          onClick={() => {
+            if (page > 1) {
+              changePage(page - 1);
+            }
+          }}
+        >
+          <GrPrevious />
+        </span>
 
-      <div className="flex gap-1 items-center">
-        <span>{page}</span>
-        <span>of</span>
-        <span>{totalPages || 1}</span>
+        <div className="flex gap-1 items-center">
+          <span>{page}</span>
+          <span>of</span>
+          <span>{totalPages || 1}</span>
+        </div>
+
+        <span
+          className="p-3 border border-primary-dark rounded-full cursor-pointer"
+          onClick={() => {
+            if (page < totalPages) {
+              changePage(page + 1);
+            }
+          }}
+        >
+          <GrNext />
+        </span>
       </div>
-
-      <span
-        className="p-3 border border-primary-dark rounded-full cursor-pointer"
-        onClick={() => {
-          if (page < totalPages) {
-            changePage(page + 1);
-          }
-        }}
-      >
-        <GrNext />
-      </span>
       <form onSubmit={handleSubmit} className="flex items-center gap-2">
         <label htmlFor="target" className="flex items-center gap-1">
           <span>Go</span>
