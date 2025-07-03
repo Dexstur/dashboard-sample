@@ -9,6 +9,7 @@ import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { setSearch } from "@/lib/redux";
 import classNames from "classnames";
+import { authActions } from "@/actions";
 
 export function AdminHeader({
   toggle,
@@ -18,6 +19,7 @@ export function AdminHeader({
   const dispatch = useAppDispatch();
   const { email } = useAppSelector((state) => state.auth);
   const [search, localSearch] = useState("");
+  const { logout } = authActions();
 
   const menuClass = classNames(
     "profile-menu absolute top-[72px] lg:top-[100px] right-2 w-[200px] bg-primary-dark border border-primary-dark rounded-md text-white",
@@ -71,7 +73,10 @@ export function AdminHeader({
               <li className="hover:bg-primary-shade hover:text-white p-2 transition-all duration-300 cursor-pointer">
                 Settings
               </li>
-              <li className="hover:bg-primary-shade hover:text-white p-2 transition-all duration-300 cursor-pointer">
+              <li
+                className="hover:bg-primary-shade hover:text-white p-2 transition-all duration-300 cursor-pointer"
+                onClick={logout}
+              >
                 Logout
               </li>
             </ul>
